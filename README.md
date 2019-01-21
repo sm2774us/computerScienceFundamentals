@@ -13,26 +13,26 @@ __## Computer Science fundementals__
 
 ## 3.) Algorithm Complexity 
 * big-o notaion (must know or you will fail)
-big-o-notation =  A theoretical measure of the execution of an algorithm, usually the time or memory needed, given the problem size n, which is usually the number of items. Informally, saying some equation <img src="https://latex.codecogs.com/gif.latex?f(n)&space;=&space;O(g(n))" title="f(n) = O(g(n))" /> means it is less than some constant multiple of g(n).
+big-o-notation =  A theoretical measure of the execution of an algorithm, usually the time or memory needed, given the problem size n, which is usually the number of items. Informally, saying some equation <img src="https://latex.codecogs.com/gif.latex?f(n)&space;=&space;O(g(n))" title="f(n) = O(g(n))" /> means it is less than some constant multiple of <img src="https://latex.codecogs.com/gif.latex?g(n)" title="g(n)" />.
 
-![Table](/../master/images/bigo.png?raw=true "Algorithum table")
+![Table](/../master/images/bigo.png?raw=true "Algorithm table")
 ![Graph](/../master/images/bigograph.png??raw=true "Graph")
 
 * https://www.topcoder.com/blog/big-o-notation-primer/  
 
-O(1) = O(1) represents an algorithm that takes the same amount of time to execute regardless of the number of inputs. So, 1 item takes 1 second, 10 items take 1 second, 100 items take 1 second and so on. Therefore performance is not affected by the size of the input data.
+<img src="https://latex.codecogs.com/gif.latex?O(1)&space;=&space;O(1)" title="O(1) = O(1)" /> represents an algorithm that takes the same amount of time to execute regardless of the number of inputs. So, 1 item takes 1 second, 10 items take 1 second, 100 items take 1 second and so on. Therefore performance is not affected by the size of the input data.
 
-O(N) = O(N) represents an algorithm where the size of the input data impacts the execution time. The performance of the algorithm is directly proportional to the number of inputs. So, 1 item takes 1 second, 10 items take 10 seconds, 100 items take 100 seconds and so on.
+<img src="https://latex.codecogs.com/gif.latex?O(N)&space;=&space;O(N)" title="O(N) = O(N)" /> represents an algorithm where the size of the input data impacts the execution time. The performance of the algorithm is directly proportional to the number of inputs. So, 1 item takes 1 second, 10 items take 10 seconds, 100 items take 100 seconds and so on.
 
-O(log N) = O(log N) represents an algorithm where the number of computations grows linearly as input data grows exponentially. So 1 item takes 1 second, 10 items take 2 seconds, 100 items take 3 seconds and so on.
+<img src="https://latex.codecogs.com/gif.latex?O(log N)&space;=&space;O(log N)" title="O(log N) = O(log N)" /> represents an algorithm where the number of computations grows linearly as input data grows exponentially. So 1 item takes 1 second, 10 items take 2 seconds, 100 items take 3 seconds and so on.
 
-O(2N) = O(2N) represents an algorithm where execution time is doubled for each additional input. So 1 item takes 2 seconds, 2 items take 4 seconds, 3 items take 8 seconds and so on.
+<img src="https://latex.codecogs.com/gif.latex?O(2N)&space;=&space;O(2N)" title="O(2N) = O(2N)" /> represents an algorithm where execution time is doubled for each additional input. So 1 item takes 2 seconds, 2 items take 4 seconds, 3 items take 6 seconds and so on.
 
-O(N!) = O(N!) represents a factorial algorithm that must perform N! calculations. So 1 item takes 1 second, 2 items take 2 seconds, 3 items take 6 seconds and so on. An example of a this algorithm is one that recursively calculates fibonacci numbers.
+<img src="https://latex.codecogs.com/gif.latex?O(N!)&space;=&space;O(N!)" title="O(N!) = O(N!)" /> represents a factorial algorithm that must perform N! calculations. So 1 item takes 1 second, 2 items take 2 seconds, 3 items take 6 seconds and so on. An example of a this algorithm is one that recursively calculates fibonacci numbers.
 
-O(N^2) = O(N^2) represents an algorithm that is directly proportional to the square of the sizes of the inputs and must performs N^2 calculations (by definition). Bubblesort is a good example of this algorithm.
+<img src="https://latex.codecogs.com/gif.latex?O(N^2)&space;=&space;O(N^2)" title="O(N^2) = O(N^2)" /> represents an algorithm that is directly proportional to the square of the sizes of the inputs and must performs N^2 calculations (by definition). Bubblesort is a good example of this algorithm.
 
-O(N log N) = represents an algorithm that will in increase in execution time proportionate to the number of the input times the logarithm of the number of the input. Mergesort and quicksort are good examples of this algorithm.
+<img src="https://latex.codecogs.com/gif.latex?O(N log N)" title="O(N log N)" /> = represents an algorithm that will in increase in execution time proportionate to the number of the input times the logarithm of the number of the input. Mergesort and quicksort are good examples of this algorithm.
 
 ![Big-O Complexity Chart](/../master/images/bigocomplexitychart.png?raw=true "Big-O Complexity Chart")
 ![Common Data Structure Operations](/../master/images/commonDataStructureOperations.png??raw=true "Common Data Structure Operations")
