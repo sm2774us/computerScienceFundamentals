@@ -167,25 +167,25 @@ will execute the block with the largest complexity. So, given
   else:
      block 2     complexity is O(N)
 
-The complexity class for the if is O(N) + max (O(N**2),O(N))) = O(N) + O(N**2) =
-O(N + N**2) = O(N**2). If the test had complexity class O(N**3), then the
-complexity class for the if is O(N**3) + max (O(N**2),O(N))) = 
-O(N**3) + O(N**2) = O(N**3 + N**2) = O(N**3).
+The complexity class for the if statement is <img src="https://latex.codecogs.com/gif.latex?O(N)&space;&plus;&space;max&space;(O(N^2),O(N)))&space;=&space;O(N)&space;&plus;&space;O(N^2)&space;=&space;O(N&space;&plus;&space;N^2)&space;=&space;O(N^2)" title="O(N) + max (O(N^2),O(N))) = O(N) + O(N^2) = O(N + N^2) = O(N^2)" />. If the test had complexity class O(N^3), then the
+complexity class for the if is <img src="https://latex.codecogs.com/gif.latex?O(N^3)&space;&plus;&space;max&space;(O(N^2),O(N)))&space;=&space;O(N^3)&space;&plus;&space;O(N^2)&space;=&space;O(N^3&space;&plus;&space;N^2)&space;=&space;O(N^3)" title="O(N^3) + max (O(N^2),O(N))) = O(N^3) + O(N^2) = O(N^3 + N^2) = O(N^3)" />.
 
 ------------------------------------------------------------------------------
 
 Law of Multiplcation for big-O notation
 
- O(f(n)) * O(g(n)) is O( f(n) * g(n) )
+ <img src="https://latex.codecogs.com/gif.latex?O(f(N))&space;*&space;O(g(N))&space;=&space;O(&space;f(N)&space;*&space;g(N)&space;)" title="O(f(N)) * O(g(N)) = O( f(N) * g(N) )" />
 
-If we repeat an O(f(N)) process O(N) times, the resulting complexity is
-O(N)*O(f(N)) = O( Nf(N) ). An example of this is, if some function call f(...)
-is O(N**2), then executing that call N times (in the following loop)
+If we repeat an <img src="https://latex.codecogs.com/gif.latex?O(f(N))" title="O(f(N))" /> process <img src="https://latex.codecogs.com/gif.latex?O(N)" title="O(N)" /> times, the resulting complexity is
+<img src="https://latex.codecogs.com/gif.latex?O(N)*O(f(N))&space;=&space;O(&space;Nf(N)&space;)" title="O(N)*O(f(N)) = O( Nf(N) )" />. An example of this is, if some function call <img src="https://latex.codecogs.com/gif.latex?f(...)" title="f(...)" />
+is <img src="https://latex.codecogs.com/gif.latex?O(N^2)" title="O(N^2)" />, then executing that call N times (in the following loop)
 
+  ```pseudo
   for i in range(N):
     f(...)
-
-is O(N)*O(N**2) = O(N*N**2) = O(N**3)
+  ```
+  
+is <img src="https://latex.codecogs.com/gif.latex?O(N)*O(N^2)&space;=&space;O(N*N^2)&space;=&space;O(N^3)" title="O(N)*O(N^2) = O(N*N^2) = O(N^3)" />
 
 This rule helps us understand how to compute the complexity of doing some 
 statement INSIDE A BLOCK controlled by a statement that is REPEATING it. We
@@ -212,13 +212,12 @@ def is_unique1 (alist : [int]) -> bool:
             return False		O(1) - never executed in worst case
     return True				O(1)
 ```
-The complexity class for executing the entire function is O(N) * O(N) + O(1)
-= O(N**2). So we know from the previous lecture that if we double the length of
+The complexity class for executing the entire function is <img src="https://latex.codecogs.com/gif.latex?O(N)&space;*&space;O(N)&space;&plus;&space;O(1)&space;=&space;O(N**2)" title="O(N) * O(N) + O(1) = O(N**2)" />. So we know from the previous lecture that if we double the length of
 alist, this function takes 4 times as long to execute.
 
 Note that in the worst case, we never return False and keep executing the loop,
 so this O(1) does not appear in the answer. Also, in the worst case the list
-slice is alist[1:] which is O(N-1) = O(N).
+slice is alist[1:] which is <img src="https://latex.codecogs.com/gif.latex?O(N-1)&space;=&space;O(N)" title="O(N-1) = O(N)" />.
 
 2) Algorithm 2: A list is unique if when we sort its values, no ADJACENT values
 are equal. If there were duplicate values, sorting the list would put these
@@ -236,20 +235,18 @@ def is_unique2 (alist : [int]) -> bool:
     return True	   			O(1)
 ```
 The complexity class for executing the entire function is given by the sum
-O(N) + O(N Log N) + O(N)*O(1) + O(1) = O(N + N Log N + O(N*1) + 1) =
-O(N + N Log N + N + 1) = O(N Log N + 2N + 1) = O(N Log N). So the
+<img src="https://latex.codecogs.com/gif.latex?O(N)&space;&plus;&space;O(N&space;Log&space;N)&space;&plus;&space;O(N)*O(1)&space;&plus;&space;O(1)&space;=&space;O(N&space;&plus;&space;N&space;Log&space;N&space;&plus;&space;O(N*1)&space;&plus;&space;1)&space;=&space;O(N&space;&plus;&space;N&space;Log&space;N&space;&plus;&space;N&space;&plus;&space;1)&space;=&space;O(N&space;Log&space;N&space;&plus;&space;2N&space;&plus;&space;1)&space;=&space;O(N&space;Log&space;N)" title="O(N) + O(N Log N) + O(N)*O(1) + O(1) = O(N + N Log N + O(N*1) + 1) = O(N + N Log N + N + 1) = O(N Log N + 2N + 1) = O(N Log N)" />. So the
 complexity class for this algorithm/function is lower than the first algorithm,
 the is_unique1 function. For large N unque2 will eventually be faster.
 
 Notice that the complexity class for sorting is dominant in this code: it does
 most of the work. If we double the length of alist, this function takes a bit
-more than twice the amount of time. In N Log N: N doubles and Log N gets a tiny
-bit bigger (i.e., Log 2N = 1 + Log N; e.g., Log 2000 = 1 + Log 1000 = 11, so
+more than twice the amount of time. In <img src="https://latex.codecogs.com/gif.latex?N&space;Log&space;N" title="N Log N" />: N doubles and <img src="https://latex.codecogs.com/gif.latex?N&space;Log&space;N" title="Log N" /> gets a tiny
+bit bigger (i.e., <img src="https://latex.codecogs.com/gif.latex?Log&space;2N&space;=&space;1&space;&plus;&space;Log&space;N" title="Log 2N = 1 + Log N" />; e.g., Log 2000 = 1 + Log 1000 = 11, so
 compared to 1000 Log 1000, 2000 Log 2000 got 2.2 times bigger, or 10% bigger
 than just doubling).
 
-Looked at another way if T(N) = c*(N Log N), then T(2N) = c*(2N Log 2N) =
-c*2N Log N + c*2N = 2*T(N) + c*2N. Or, computing the doubling signature
+Looked at another way if <img src="https://latex.codecogs.com/gif.latex?T(N)&space;=&space;c*(N&space;Log&space;N),&space;then&space;T(2N)&space;=&space;c*(2N&space;Log&space;2N)&space;=&space;c*2N&space;Log&space;N&space;&plus;&space;c*2N&space;=&space;2*T(N)&space;&plus;&space;c*2N" title="T(N) = c*(N Log N), then T(2N) = c*(2N Log 2N) = c*2N Log N + c*2N = 2*T(N) + c*2N" />. Or, computing the doubling signature
 
 T(2N)    c*2(N Log N) + c*2N            2
 ----- =  -------------------  =  2 + -------
@@ -266,13 +263,11 @@ def is_unique3 (alist : [int]) -> bool:
     aset = set(alist)			O(N): construct set from alist values
     return len(aset) == len(alist)	O(1): 2 len (each O(1)) and == ints O(1)
 ```
-The complexity class for executing the entire function is O(N) + O(1) =
-O(N + 1) = O(N). So the complexity class for this algortihm/function is lower
+The complexity class for executing the entire function is <img src="https://latex.codecogs.com/gif.latex?O(N)&space;&plus;&space;O(1)&space;=&space;O(N&space;&plus;&space;1)&space;=&space;O(N)" title="O(N) + O(1) = O(N + 1) = O(N)" />. So the complexity class for this algortihm/function is lower
 than both the first and second algorithms/functions. If we double the length of
 alist, this function takes just twice the amount of time. We could write the
 body of this function more simply as: return len(set(alist)) == len(alist),
-where evaluating set(alist) takes O(N) and then computing the two len's and
-comparing them for equality are all O(1).
+where evaluating set(alist) takes <img src="https://latex.codecogs.com/gif.latex?O(N)" title="O(N)" /> and then computing the two len's and comparing them for equality are all <img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)" />.
 
 So the bottom line here is that there might be many algorithms/functions to
 solve some problem. If they are small, we can analyze them statically (looking
@@ -363,7 +358,7 @@ http://www.csanimated.com/animation.php?t=Quicksort
 ```
 
 #### mergesort:
-Merge sort is a sorting technique based on divide and conquer technique. With worst-case time complexity being Ο(n log n), it is one of the most respected algorithms.
+Merge sort is a sorting technique based on divide and conquer technique. With worst-case time complexity being <img src="https://latex.codecogs.com/gif.latex?Ο(N&space;Log&space;N)" title="Ο(N Log N)" />, it is one of the most respected algorithms.
 
 https://www.youtube.com/watch?v=GCae1WNvnZM
 
@@ -382,6 +377,7 @@ Pseudocode
 We shall now see the pseudocodes for merge sort functions. As our algorithms point out two main functions − divide & merge.
 Merge sort works with recursion and we shall see our implementation in the same way.
 
+```pseudo
 procedure mergesort( var a as array )
    if ( n == 1 ) return a
 
@@ -421,7 +417,7 @@ procedure merge( var a as array, var b as array )
    return c
 	
 end procedure
-
+```
 ```python 
 def mergeSort(alist):
     print("Splitting ",alist)
@@ -802,7 +798,7 @@ def shell_sort(array):
 ```
 
 #### bucket sort:
-Bucket sort can be exceptionally fast because of the way elements are assigned to buckets, typically using an array where the index is the value. This means that more auxiliary memory is required for the buckets at the cost of running time than more comparison sorts. It runs in O(n+k)O(n+k) time in the average case where nn is the number of elements to be sorted and kk is the number of buckets.
+Bucket sort can be exceptionally fast because of the way elements are assigned to buckets, typically using an array where the index is the value. This means that more auxiliary memory is required for the buckets at the cost of running time than more comparison sorts. It runs in <img src="https://latex.codecogs.com/gif.latex?O(N&plus;K)O(N&plus;K)" title="O(N+K)O(N+K)" /> time in the average case where nn is the number of elements to be sorted and kk is the number of buckets.
 
 ![Bucket Sort](/../master/images/bucketsort.png?raw=true "bucket sort ex")
 ![Bucket Sort Complexity](/../master/images/bucketsortcomplexity.png?raw=true "bucket sort complexity")
@@ -811,11 +807,11 @@ when its fast:
 Bucket sort’s best case occurs when the data being sorted can be distributed between the buckets perfectly. If the values are sparsely allocated over the possible value range, a larger bucket size is better since the buckets will likely be more evenly distributed. An example of this is [2303, 33, 1044], if buckets can only contain 5 different values then for this example 461 buckets would need to be initialised. A bucket size of 200-1000 would be much more reasonable.
 The inverse of this is also true; a densely allocated array like [103, 99, 119, 112, 111] performs best when buckets are as small as possible.
 Bucket sort is an ideal algorithm choice when:
-The additional O(n + k)O(n+k) memory usage is not an issue
+The additional <img src="https://latex.codecogs.com/gif.latex?O(N&plus;K)O(N&plus;K)" title="O(N+K)O(N+K)" /> memory usage is not an issue
 Elements are expected to be fairly evenly distributed
 
 when its slow:
-Bucket sort performs at its worst, O(n^2), when all elements at allocated to the same bucket. Since individual buckets are sorted using another algorithm, if only a single bucket needs to be sorted, bucket sort will take on the complexity of the inner sorting algorithm.
+Bucket sort performs at its worst, <img src="https://latex.codecogs.com/gif.latex?O(N^2)" title="O(N^2)" />, when all elements at allocated to the same bucket. Since individual buckets are sorted using another algorithm, if only a single bucket needs to be sorted, bucket sort will take on the complexity of the inner sorting algorithm.
 This depends on the individual implementation though and can be mitigated. For example a bucket sort algorithm could be made to work with large bucket sizes by using insertion sort on small buckets (due to its low overhead), and merge sort or quicksort on larger buckets.
 
 ```python 
