@@ -11,9 +11,9 @@ Your background is important, so utilize it to your advantage by sharing interes
 
 __## Computer Science fundementals__
 
-## 3.) Algorithum Complexity 
+## 3.) Algorithm Complexity 
 * big-o notaion (must know or you will fail)
-big-o-notation =  A theoretical measure of the execution of an algorithm, usually the time or memory needed, given the problem size n, which is usually the number of items. Informally, saying some equation f(n) = O(g(n)) means it is less than some constant multiple of g(n).
+big-o-notation =  A theoretical measure of the execution of an algorithm, usually the time or memory needed, given the problem size n, which is usually the number of items. Informally, saying some equation <img src="https://latex.codecogs.com/gif.latex?f(n)&space;=&space;O(g(n))" title="f(n) = O(g(n))" /> means it is less than some constant multiple of g(n).
 
 ![Table](/../master/images/bigo.png?raw=true "Algorithum table")
 ![Graph](/../master/images/bigograph.png??raw=true "Graph")
