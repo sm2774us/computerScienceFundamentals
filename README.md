@@ -205,13 +205,13 @@ will assume in all three examples that len(alist) is N.
 1) Algorithm 1: A list is unique if each value in the list does not occur in any
 later indexes: alist[i+1:] is a list containing all values after the one at
 index i.
-
+```python
 def is_unique1 (alist : [int]) -> bool:
     for i in range(len(alist)):		O(N)
         if alist[i] in alist[i+1:]:	O(N) - index+add+slice+in: O(1)+O(1)+O(N)+O(N) = O(N)
             return False		O(1) - never executed in worst case
     return True				O(1)
-
+```
 The complexity class for executing the entire function is O(N) * O(N) + O(1)
 = O(N**2). So we know from the previous lecture that if we double the length of
 alist, this function takes 4 times as long to execute.
@@ -226,7 +226,7 @@ duplicate values right next to each other (adjacent). Here we copy the list so
 as to not mutate (change the order of the parameter's list) by sorting it:
 it turns out that copying the list does not increase the complexity class of
 the method.
-
+```python
 def is_unique2 (alist : [int]) -> bool:
     copy = list(alist)			O(N)
     copy.sort()				O(N Log N) - for fast Python sorting
@@ -234,7 +234,7 @@ def is_unique2 (alist : [int]) -> bool:
         if copy[i] == copy[i+1]:	O(1): +, 2 [i],and  == ints: all O(1)
             return False		O(1) - never executed in worst case
     return True	   			O(1)
-
+```
 The complexity class for executing the entire function is given by the sum
 O(N) + O(N Log N) + O(N)*O(1) + O(1) = O(N + N Log N + O(N*1) + 1) =
 O(N + N Log N + N + 1) = O(N Log N + 2N + 1) = O(N Log N). So the
@@ -261,11 +261,11 @@ So, the ratio is 2 + a bit (and that bit gets smaller as N increases)
 unchanged: if duplicate values were added to the set, its length would be
 smaller than the length of the list by exactly the number of duplicates in the
 list added to the set.
-
+```python
 def is_unique3 (alist : [int]) -> bool:
     aset = set(alist)			O(N): construct set from alist values
     return len(aset) == len(alist)	O(1): 2 len (each O(1)) and == ints O(1)
-
+```
 The complexity class for executing the entire function is O(N) + O(1) =
 O(N + 1) = O(N). So the complexity class for this algortihm/function is lower
 than both the first and second algorithms/functions. If we double the length of
