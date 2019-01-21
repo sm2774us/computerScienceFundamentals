@@ -24,7 +24,7 @@ big-o-notation =  A theoretical measure of the execution of an algorithm, usuall
 
 <img src="https://latex.codecogs.com/gif.latex?O(N)&space;=&space;O(N)" title="O(N) = O(N)" /> represents an algorithm where the size of the input data impacts the execution time. The performance of the algorithm is directly proportional to the number of inputs. So, 1 item takes 1 second, 10 items take 10 seconds, 100 items take 100 seconds and so on.
 
-<img src="https://latex.codecogs.com/gif.latex?O(log&space;N)&space;=&space;O(log&space;N)" title="O(log N) = O(log N)" /> represents an algorithm where the number of computations grows linearly as input data grows exponentially. So 1 item takes 1 second, 10 items take 2 seconds, 100 items take 3 seconds and so on.
+<img src="https://latex.codecogs.com/gif.latex?O(log&space;N)&space;=&space;O(log&space;N)" title="O(Log N) = O(Log N)" /> represents an algorithm where the number of computations grows linearly as input data grows exponentially. So 1 item takes 1 second, 10 items take 2 seconds, 100 items take 3 seconds and so on.
 
 <img src="https://latex.codecogs.com/gif.latex?O(2N)&space;=&space;O(2N)" title="O(2N) = O(2N)" /> represents an algorithm where execution time is doubled for each additional input. So 1 item takes 2 seconds, 2 items take 4 seconds, 3 items take 6 seconds and so on.
 
@@ -32,7 +32,7 @@ big-o-notation =  A theoretical measure of the execution of an algorithm, usuall
 
 <img src="https://latex.codecogs.com/gif.latex?O(N^2)&space;=&space;O(N^2)" title="O(N^2) = O(N^2)" /> represents an algorithm that is directly proportional to the square of the sizes of the inputs and must performs N^2 calculations (by definition). Bubblesort is a good example of this algorithm.
 
-<img src="https://latex.codecogs.com/gif.latex?O(N&space;log&space;N)" title="O(N log N)" /> = represents an algorithm that will in increase in execution time proportionate to the number of the input times the logarithm of the number of the input. Mergesort and quicksort are good examples of this algorithm.
+<img src="https://latex.codecogs.com/gif.latex?O(N&space;log&space;N)" title="O(N Log N)" /> = represents an algorithm that will in increase in execution time proportionate to the number of the input times the logarithm of the number of the input. Mergesort and quicksort are good examples of this algorithm.
 
 ![Big-O Complexity Chart](/../master/images/bigocomplexitychart.png?raw=true "Big-O Complexity Chart")
 ![Common Data Structure Operations](/../master/images/commonDataStructureOperations.png??raw=true "Common Data Structure Operations")
@@ -58,13 +58,13 @@ For 15 it takes 4.
 For 1,000,000 it takes 20.
 That is staggeringly good isn't it?
 
-In Big-O terms this is <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(log N)" /> or logarithmic complexity. Now the logarithm in question could be ln (base e), log10, log2 or some other base. It doesn't matter it's still <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(log N)" /> just like <img src="https://latex.codecogs.com/gif.latex?O(2N^2)" title="O(2N^2)" /> and <img src="https://latex.codecogs.com/gif.latex?O(100N^2)" title="O(100N^2)" /> are still both <img src="https://latex.codecogs.com/gif.latex?O(N^2)" title="O(N^2)" />.
+In Big-O terms this is <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(Log N)" /> or logarithmic complexity. Now the logarithm in question could be ln (base e), Log10, Log2 or some other base. It doesn't matter it's still <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(Log N)" /> just like <img src="https://latex.codecogs.com/gif.latex?O(2N^2)" title="O(2N^2)" /> and <img src="https://latex.codecogs.com/gif.latex?O(100N^2)" title="O(100N^2)" /> are still both <img src="https://latex.codecogs.com/gif.latex?O(N^2)" title="O(N^2)" />.
 
 It's worthwhile at this point to explain that Big O can be used to determine three cases with an algorithm:
 
 Best Case: In the telephone book search, the best case is that we find the name in one comparison. This is <img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)" /> or constant complexity;
-Expected Case: As discussed above this is <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(log N)" />; and
-Worst Case: This is also <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(log N)" />.
+Expected Case: As discussed above this is <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(Log N)" />; and
+Worst Case: This is also <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(Log N)" />.
 Normally we don't care about the best case. We're interested in the expected and worst case. Sometimes one or the other of these will be more important.
 
 Back to the telephone book.
@@ -246,7 +246,7 @@ bit bigger (i.e., <img src="https://latex.codecogs.com/gif.latex?Log&space;2N&sp
 compared to 1000 Log 1000, 2000 Log 2000 got 2.2 times bigger, or 10% bigger
 than just doubling).
 
-Looked at another way if <img src="https://latex.codecogs.com/gif.latex?T(N)&space;=&space;c*(N&space;Log&space;N),&space;then&space;T(2N)&space;=&space;c*(2N&space;Log&space;2N)&space;=&space;c*2N&space;Log&space;N&space;&plus;&space;c*2N&space;=&space;2*T(N)&space;&plus;&space;c*2N" title="T(N) = c*(N Log N), then T(2N) = c*(2N Log 2N) = c*2N Log N + c*2N = 2*T(N) + c*2N" />. Or, computing the doubling signature
+Looked at another way if T(N) = c*(N Log N), then T(2N) = c*(2N Log 2N) = c*2N Log N + c*2N = 2*T(N) + c*2N. Or, computing the doubling signature
 
 T(2N)    c*2(N Log N) + c*2N            2
 ----- =  -------------------  =  2 + -------
@@ -772,7 +772,7 @@ tree.postorder(tree.root)
 |-----------------------------------------------------------|
 |Type                        ||  In-place comparison sort   |
 |Worst case performance      ||  O(n2)                      |
-|Best case performance       ||  O(n log2 n)                |
+|Best case performance       ||  O(n Log2 n)                |
 |Average case performance    ||  depends on gap sequence    |
 |Worst case space complexity ||  O(n) total, O(1) auxiliary |
 |-----------------------------------------------------------|
@@ -1485,7 +1485,7 @@ But you can't index directly into a linked list very quickly. That is, if myList
 
 Same thing on disk: Quicksort would have to seek and read every item it wants to compare.
 
-Merge sort is faster in these situations because it reads the items sequentially, typically making log2(N) passes over the data. There is much less I/O involved, and much less time spent following links in a linked list.
+Merge sort is faster in these situations because it reads the items sequentially, typically making Log2(N) passes over the data. There is much less I/O involved, and much less time spent following links in a linked list.
 
 Quicksort is fast when the data fits into memory and can be addressed directly. Mergesort is faster when data won't fit into memory or when it's expensive to get to an item.
 
