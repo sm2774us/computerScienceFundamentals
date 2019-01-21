@@ -218,7 +218,7 @@ alist, this function takes 4 times as long to execute.
 
 Note that in the worst case, we never return False and keep executing the loop,
 so this O(1) does not appear in the answer. Also, in the worst case the list
-slice is aliset[1:] which is O(N-1) = O(N).
+slice is alist[1:] which is O(N-1) = O(N).
 
 2) Algorithm 2: A list is unique if when we sort its values, no ADJACENT values
 are equal. If there were duplicate values, sorting the list would put these
