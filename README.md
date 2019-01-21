@@ -24,7 +24,7 @@ big-o-notation =  A theoretical measure of the execution of an algorithm, usuall
 
 <img src="https://latex.codecogs.com/gif.latex?O(N)&space;=&space;O(N)" title="O(N) = O(N)" /> represents an algorithm where the size of the input data impacts the execution time. The performance of the algorithm is directly proportional to the number of inputs. So, 1 item takes 1 second, 10 items take 10 seconds, 100 items take 100 seconds and so on.
 
-<img src="https://latex.codecogs.com/gif.latex?O(log N)&space;=&space;O(log N)" title="O(log N) = O(log N)" /> represents an algorithm where the number of computations grows linearly as input data grows exponentially. So 1 item takes 1 second, 10 items take 2 seconds, 100 items take 3 seconds and so on.
+<img src="https://latex.codecogs.com/gif.latex?O(log&space;N)&space;=&space;O(log&space;N)" title="O(log N) = O(log N)" /> represents an algorithm where the number of computations grows linearly as input data grows exponentially. So 1 item takes 1 second, 10 items take 2 seconds, 100 items take 3 seconds and so on.
 
 <img src="https://latex.codecogs.com/gif.latex?O(2N)&space;=&space;O(2N)" title="O(2N) = O(2N)" /> represents an algorithm where execution time is doubled for each additional input. So 1 item takes 2 seconds, 2 items take 4 seconds, 3 items take 6 seconds and so on.
 
@@ -32,7 +32,7 @@ big-o-notation =  A theoretical measure of the execution of an algorithm, usuall
 
 <img src="https://latex.codecogs.com/gif.latex?O(N^2)&space;=&space;O(N^2)" title="O(N^2) = O(N^2)" /> represents an algorithm that is directly proportional to the square of the sizes of the inputs and must performs N^2 calculations (by definition). Bubblesort is a good example of this algorithm.
 
-<img src="https://latex.codecogs.com/gif.latex?O(N log N)" title="O(N log N)" /> = represents an algorithm that will in increase in execution time proportionate to the number of the input times the logarithm of the number of the input. Mergesort and quicksort are good examples of this algorithm.
+<img src="https://latex.codecogs.com/gif.latex?O(N&space;log&space;N)" title="O(N log N)" /> = represents an algorithm that will in increase in execution time proportionate to the number of the input times the logarithm of the number of the input. Mergesort and quicksort are good examples of this algorithm.
 
 ![Big-O Complexity Chart](/../master/images/bigocomplexitychart.png?raw=true "Big-O Complexity Chart")
 ![Common Data Structure Operations](/../master/images/commonDataStructureOperations.png??raw=true "Common Data Structure Operations")
@@ -58,13 +58,13 @@ For 15 it takes 4.
 For 1,000,000 it takes 20.
 That is staggeringly good isn't it?
 
-In Big-O terms this is O(log n) or logarithmic complexity. Now the logarithm in question could be ln (base e), log10, log2 or some other base. It doesn't matter it's still O(log n) just like O(2n2) and O(100n2) are still both O(n2).
+In Big-O terms this is <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(log N)" /> or logarithmic complexity. Now the logarithm in question could be ln (base e), log10, log2 or some other base. It doesn't matter it's still <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(log N)" /> just like <img src="https://latex.codecogs.com/gif.latex?O(2N^2)" title="O(2N^2)" /> and <img src="https://latex.codecogs.com/gif.latex?O(100N^2)" title="O(100N^2)" /> are still both <img src="https://latex.codecogs.com/gif.latex?O(N^2)" title="O(N^2)" />.
 
 It's worthwhile at this point to explain that Big O can be used to determine three cases with an algorithm:
 
-Best Case: In the telephone book search, the best case is that we find the name in one comparison. This is O(1) or constant complexity;
-Expected Case: As discussed above this is O(log n); and
-Worst Case: This is also O(log n).
+Best Case: In the telephone book search, the best case is that we find the name in one comparison. This is <img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)" /> or constant complexity;
+Expected Case: As discussed above this is <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(log N)" />; and
+Worst Case: This is also <img src="https://latex.codecogs.com/gif.latex?O(log&space;N)" title="O(log N)" />.
 Normally we don't care about the best case. We're interested in the expected and worst case. Sometimes one or the other of these will be more important.
 
 Back to the telephone book.
@@ -75,9 +75,9 @@ You start at the first name and compare the number. If it's a match, great, if n
 
 So to find a name given the phone number (reverse lookup):
 
-Best Case: O(1);
-Expected Case: O(n) (for 500,000); and
-Worst Case: O(n) (for 1,000,000).
+Best Case: <img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)" />;
+Expected Case: <img src="https://latex.codecogs.com/gif.latex?O(N)" title="O(N)" /> (for 500,000); and
+Worst Case: <img src="https://latex.codecogs.com/gif.latex?O(N)" title="O(N)" /> (for 1,000,000).
 The Travelling Salesman
 
 This is quite a famous problem in computer science and deserves a mention. In this problem you have N towns. Each of those towns is linked to 1 or more other towns by a road of a certain distance. The Travelling Salesman problem is to find the shortest tour that visits every town.
@@ -116,48 +116,48 @@ Something to think about.
 
 Polynomial Time
 
-Another point I wanted to make quick mention of is that any algorithm that has a complexity of O(na) is said to have polynomial complexity or is solvable in polynomial time.
+Another point I wanted to make quick mention of is that any algorithm that has a complexity of <img src="https://latex.codecogs.com/gif.latex?O(N*A)" title="O(N*A)" /> is said to have polynomial complexity or is solvable in polynomial time.
 
-O(n), O(n2) etc are all polynomial time. Some problems cannot be solved in polynomial time. Certain things are used in the world because of this. Public Key Cryptography is a prime example. It is computationally hard to find two prime factors of a very large number. If it wasn't, we couldn't use the public key systems we use.
+<img src="https://latex.codecogs.com/gif.latex?O(N)" title="O(N)" />, <img src="https://latex.codecogs.com/gif.latex?O(N^2)" title="O(N^2)" /> etc are all polynomial time. Some problems cannot be solved in polynomial time. Certain things are used in the world because of this. Public Key Cryptography is a prime example. It is computationally hard to find two prime factors of a very large number. If it wasn't, we couldn't use the public key systems we use.
 
 Law of Addition for big-O notation
 
- O(f(n)) + O(g(n)) is O( f(n) + g(n) )
+<img src="https://latex.codecogs.com/gif.latex?O(f(N))&space;&plus;&space;O(g(N))&space;=&space;O(&space;f(N)&space;&plus;&space;g(N)&space;)" title="O(f(N)) + O(g(N)) = O( f(N) + g(N) )" />
 
 That is, we when adding complexity classes we bring the two complexity classes
-inside the O(...). Ultimately, O( f(n) + g(n) ) results in the bigger of the two
+inside the <img src="https://latex.codecogs.com/gif.latex?O(...)" title="O(...)" />. Ultimately, <img src="https://latex.codecogs.com/gif.latex?O(&space;f(N)&space;&plus;&space;g(N)&space;)" title="O( f(N) + g(N) )" /> results in the bigger of the two
 complexity class (because we drop the lower added term). So,
 
-O(N) + O(Log N)  =  O(N + Log N)  =  O(N)
+<img src="https://latex.codecogs.com/gif.latex?O(N)&space;&plus;&space;O(Log&space;N)&space;=&space;O(N&space;&plus;&space;Log&space;N)&space;=&space;O(N)" title="O(N) + O(Log N) = O(N + Log N) = O(N)" />
 
 because N is the faster growing function.
 
 This rule helps us understand how to compute the complexity of doing some 
-SEQUENCE of operations: executing a statement that is O(f(n)) followed by
-executing a statement that is O(g(n)). Executing both statements SEQUENTAILLY
-is O(f(n)) + O(g(n)) which is O( f(n) + g(n) ) by the rule above.
+SEQUENCE of operations: executing a statement that is <img src="https://latex.codecogs.com/gif.latex?O(f(N))" title="O(f(N))" /> followed by
+executing a statement that is <img src="https://latex.codecogs.com/gif.latex?O(g(N))" title="O(g(N))" />. Executing both statements SEQUENTAILLY
+is <img src="https://latex.codecogs.com/gif.latex?O(f(N))&space;&plus;&space;O(g(N))" title="O(f(N)) + O(g(N))" /> which is <img src="https://latex.codecogs.com/gif.latex?O(&space;f(N)&space;&plus;&space;g(N)&space;)" title="O( f(N) + g(N) )" /> by the rule above.
 
-For example, if some function call f(...) is O(N) and another function call
-g(...) is O(N Log N), then doing the sequence
+For example, if some function call <img src="https://latex.codecogs.com/gif.latex?f(...)" title="f(...)" /> is <img src="https://latex.codecogs.com/gif.latex?O(N)" title="O(N)" /> and another function call
+<img src="https://latex.codecogs.com/gif.latex?g(...)" title="g(...)" /> is <img src="https://latex.codecogs.com/gif.latex?O(N&space;Log&space;N)" title="O(N Log N)" />, then doing the sequence
 
-   f(...)
-   g(...)
+   <img src="https://latex.codecogs.com/gif.latex?f(...)" title="f(...)" />
+   <img src="https://latex.codecogs.com/gif.latex?g(...)" title="g(...)" />
 
-is O(N) + O(N Log N) = O(N + N Log N) = O(N Log N). Of course, executing the
+is <img src="https://latex.codecogs.com/gif.latex?O(N)&space;&plus;&space;O(N&space;Log&space;N)&space;=&space;O(N&space;&plus;&space;N&space;Log&space;N)&space;=&space;O(N&space;Log&space;N)" title="O(N) + O(N Log N) = O(N + N Log N) = O(N Log N)" />. Of course, executing the
 sequence (calling f twice)
 
-  f(...)
-  f(...)
+  <img src="https://latex.codecogs.com/gif.latex?f(...)" title="f(...)" />
+  <img src="https://latex.codecogs.com/gif.latex?f(...)" title="f(...)" />
 
-is O(N) + O(N) which is O(N + N) which is O(2N) which is O(N).
+is <img src="https://latex.codecogs.com/gif.latex?O(N)&space;&plus;&space;O(N)" title="O(N) + O(N)" /> which is <img src="https://latex.codecogs.com/gif.latex?O(N&space;&plus;&space;N)" title="O(N + N)" /> which is <img src="https://latex.codecogs.com/gif.latex?O(2N)" title="O(2N)" /> which is <img src="https://latex.codecogs.com/gif.latex?O(N)" title="O(N)" />.
 
 Note that for an if statment like
-
+  ```pseudo
   if test:    	 assume complexity of test is O(T)
      block 1     assume complexity of block 1 is O(B1)
   else:
      block 2     assume complexity of block 2 is O(B2)
-
+  ```
 The complexity class for the if is O(T) + max(O(B1),O(B2)). The test is always
 evaluated, and one of the blocks is always executed. In the worst case, the if
 will execute the block with the largest complexity. So, given
